@@ -5,22 +5,37 @@ public class MyPlayer {
     public int[] columns;
 
 
-    public MyPlayer() {
+    /*public MyPlayer() {
         columns = new int[10];
-        String[]numbers = {"A", "B","C"};
-        for(int A = 1; A <= 3; A++) {
+        String[] numbers = {"A", "B", "C"};
+        for (int A = 1; A <= 3; A++) {
             for (int B = 0; B <= A; B++) {
-                    for (int C = 0; C <= B; C++) {
-                            System.out.println(A + "," + B + "," + C);
+                for (int C = 0; C <= B; C++) {
+                    System.out.println(A + "," + B + "," + C);
                 }
             }
         }
+        */
+    public MyPlayer() {
+        columns = new int[10];
+        int x = digits(1, 2, 3);
+        System.out.println(x);
+    static int digits(int a, int b, int c){
+            for (a <= 3; a--) {
+                for (b <= 3; b <= a; b--) {
+                    for (c <= 3; c <= b; c--) {
+                        System.out.println(a + "," + b + "," + c);
+                    }
+                }
+            }
+        }
+
 
         /***
          * This code will run just once, when the game opens.
          * Add your code here.
          */
-    }
+
 
     public Point move(Chip[][] pBoard) {
 
