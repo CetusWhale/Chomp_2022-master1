@@ -17,7 +17,7 @@ public class MyPlayer {
             }
         }
         System.out.println("Generating all possible boards");
-        digits(3, 3, 3);
+        digits(3, 3, 0);
         }
 
     public void digits(int A, int B, int C) {
@@ -40,11 +40,12 @@ public class MyPlayer {
             }
             System.out.println(a + "," + b + "," + c2);
         }
+        c2 = C;
         for (a = A-1; a >= 1; a--) {
             if(b2 >= a) {
                 b2 = a;
             }
-            if(c2 != a){
+            if(c2 > a){
                 c2 = a;
             }
             System.out.println(a + "," + b2 + "," + c2);
