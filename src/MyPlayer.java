@@ -5,8 +5,9 @@ public class MyPlayer {
     public int[] columns;
 
 
-    /*public MyPlayer() {
+    public MyPlayer() {
         columns = new int[10];
+
         String[] numbers = {"A", "B", "C"};
         for (int A = 1; A <= 3; A++) {
             for (int B = 0; B <= A; B++) {
@@ -15,20 +16,43 @@ public class MyPlayer {
                 }
             }
         }
-        */
-    public MyPlayer() {
-        columns = new int[10];
-        int x = digits(1, 2, 3);
-        System.out.println(x);
-    static int digits(int a, int b, int c){
-            for (a <= 3; a--) {
-                for (b <= 3; b <= a; b--) {
-                    for (c <= 3; c <= b; c--) {
-                        System.out.println(a + "," + b + "," + c);
-                    }
-                }
-            }
+        System.out.println("Generating all possible boards");
+        digits(3, 3, 3);
         }
+
+    public void digits(int A, int B, int C) {
+        int a = A;
+        int c2 = C;
+        int b2 = B;
+        for (int c = C-1; c >= 0; c--){
+                    System.out.println(a + "," + B + "," + c);
+//        for (int a = A; a >= 1; a--) {
+//            for (int b = B; b >= 0; b--) {
+//                for (int c = C; c >= 0; c--) {
+//                    System.out.println(a + "," + b + "," + c);
+//                }
+//            }
+//        }
+                }
+        for (int b = B-1; b >= 0; b--) {
+            if(c2 >= b) {
+                c2 =b;
+            }
+            System.out.println(a + "," + b + "," + c2);
+        }
+        for (a = A-1; a >= 1; a--) {
+            if(b2 >= a) {
+                b2 = a;
+            }
+            if(c2 != a){
+                c2 = a;
+            }
+            System.out.println(a + "," + b2 + "," + c2);
+        }
+
+            }
+
+
 
 
         /***
@@ -42,8 +66,8 @@ public class MyPlayer {
         System.out.println("MyPlayer Move");
 
         gameBoard = pBoard;
-        int column = 0;
-        int row = 0;
+        int column = 1;
+        int row = 1;
 
         row = 1;
         column = 1;
