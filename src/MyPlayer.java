@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 public class MyPlayer {
     public Chip[][] gameBoard;
@@ -6,6 +7,13 @@ public class MyPlayer {
 
 
     public MyPlayer() {
+        ArrayList<Integer> LB = new ArrayList<Integer>();
+        LB. add("100");
+        for (String i : LB){
+            System.out.println("Losing Boards");
+            System.out.println(i);
+        }
+
         columns = new int[10];
 
         String[] numbers = {"A", "B", "C"};
@@ -50,6 +58,8 @@ public class MyPlayer {
             }
             System.out.println(a + "," + b2 + "," + c2);
         }
+
+
 
             }
 
